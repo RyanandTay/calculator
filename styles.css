@@ -55,7 +55,7 @@ body {
     border: none;
     text-align: right;
     padding: 0 .5rem;
-    font-family: 'VFD Nova', 'Courier New', Courier, monospace;
+    font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
     height: 80px;
     font-size: 40px; /* 80% of 80px */
 }
@@ -125,4 +125,14 @@ body {
     margin-top: auto;
     padding: 2rem 0 0 1.5rem;
     font-size: 12px;
+}
+
+#calculatorText::-webkit-outer-spin-button,
+#calculatorText::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#calculatorText[type="number"] {
+    -moz-appearance: textfield;
 }

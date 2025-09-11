@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    background-color: rgba(64, 64, 64, 1);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.calculatorContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    aspect-ratio: 3 / 5; 
+    width: min(90vw, 360px);  
+    max-height: 90vh;
+    height: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: rgba(242, 242, 242);
+    border: 1px solid;
+    border-color: rgba(143, 140, 131, .4);
+    border-radius: 20px;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.displayWindow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    flex: 0 0 70px;
+    border: 1px solid;
+    border-color: rgba(143, 140, 131, .9);
+    border-radius: 6px;
+    align-self: flex-start;
+    /* padding: 0 .5rem; */
+    background-color: rgba(192, 192, 192, 1);
+    margin-bottom: 2rem;
+}
+
+#calculatorText {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    border: none;
+    text-align: right;
+    padding: 0 .5rem;
+    font-family: 'VFD Nova', 'Courier New', Courier, monospace;
+    height: 80px;
+    font-size: 40px; /* 80% of 80px */
+}
+
+.calculatorButtons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.calculatorButtons button {
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    border-width: 1px;
+    border-color: rgba(143, 140, 131, .25);
+    border-radius: 8px;
+}
+
+.division {
+    background-color: rgba(120, 135, 90, 1);
+}
+
+.multiplication {
+    background-color: rgba(140, 155, 100, 1);
+}
+
+.subtraction {
+    background-color: rgba(160, 175, 115, 1);
+}
+
+.addition {
+    background-color: rgba(180, 195, 130, 1);
+}
+
+.equals {
+    background-color: rgba(200, 215, 145, 1);
+}
+
+.functionButton {
+    background-color: rgba(110, 125, 160, 1)   
+}
+
+.numberButton {
+    background-color: rgba(210, 220, 230, 1);
+}
+
+.clearEntryOrAll {
+    background-color: rgba(230, 220, 140, 1);
+}
+
+.calculatorButtons button {
+    transition: filter 0.2s ease;
+}
+
+.calculatorButtons button:hover {
+    filter: brightness(1.15); /* 15% lighter */
+}
+
+.calculatorFooter a:link, 
+.calculatorFooter a:visited {
+    color: rgba(143, 140, 131, 1);
+    text-decoration: none;
+}
+
+.calculatorFooter {
+    margin-top: auto;
+    padding: 2rem 0 0 1.5rem;
+    font-size: 12px;
+}

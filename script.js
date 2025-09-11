@@ -1,36 +1,57 @@
-function addition(array) {
-    return array.reduce((total, current) => total + current, 0);
-}
+const calculatorFunctions = {
+    addition(array) {
+        return array.reduce((total, current) => total + current, 0);
+    },
 
-function subtraction(array) {
-    return array.reduce((difference, current) => difference - current);
-}
+    subtraction(array) {
+        return array.reduce((difference, current) => difference - current);
+    },
 
-function division(array) {
-    return array.reduce((quotient, current) => quotient / current);
-}
+    division(array) {
+        return array.reduce((quotient, current) => quotient / current);
+    },
 
-function multiplication(array) {
-    return array.reduce((product, current) => product * current, 1);
-}
+    multiplication(array) {
+        return array.reduce((product, current) => product * current, 1);
+    },
 
-function exponent(base, power) {
-    return Math.pow(base, power);
-}
+    exponent(base, power) {
+        return Math.pow(base, power);
+    },
 
-function squareRoot(radicand) {
-    return Math.sqrt(radicand);
-}
+    squareRoot(radicand) {
+        return Math.sqrt(radicand);
+    },
 
- function percentage(whole) {
-    return whole / 100;
- }
+    percentage(whole) {
+        return whole / 100;
+    },
 
- function roundZero(decimalNumber) {
-    return Math.round(decimalNumber);
- }
+    roundZero(decimalNumber) {
+        return Math.round(decimalNumber);
+    },
+        
+    roundTwo(decimalNumber) {
+        return parseFloat(decimalNumber.toFixed(2));
+    },
+};
 
- function roundTwo(decimalNumber) {
-    return parseFloat(decimalNumber.toFixed(2));
- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+ 
 

@@ -43,20 +43,19 @@ body {
     border-color: rgba(143, 140, 131, .9);
     border-radius: 6px;
     align-self: flex-start;
-    /* padding: 0 .5rem; */
     background-color: rgba(192, 192, 192, 1);
     margin-bottom: 2rem;
 }
 
 #calculatorText {
     width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 6px;
     border: none;
     text-align: right;
     padding: 0 .5rem;
     font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
-    height: 80px;
     font-size: 40px; /* 80% of 80px */
 }
 

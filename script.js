@@ -1,101 +1,157 @@
+
+
 const calculatorFunctions = {
-    addition(array) {
-        return array.reduce((total, current) => total + current, 0);
+    addition(firstNumber, secondNumber) {
+        return +firstNumber + +secondNumber;
     },
 
-    subtraction(array) {
-        return array.reduce((difference, current) => difference - current);
+    subtraction(firstNumber, secondNumber) {
+        return +firstNumber - +secondNumber;
     },
 
-    division(array) {
-        return array.reduce((quotient, current) => quotient / current);
+    division(firstNumber, secondNumber) {
+        return +firstNumber / +secondNumber;
     },
 
-    multiplication(array) {
-        return array.reduce((product, current) => product * current, 1);
+    multiplication(firstNumber, secondNumber) {
+        return +firstNumber * +secondNumber;
     },
 
-    exponent(base, power) {
-        return Math.pow(base, power);
+    exponent(firstNumber, secondNumber) {
+        return Math.pow(+firstNumber, +secondNumber);
     },
 
-    squareRoot(radicand) {
-        return Math.sqrt(radicand);
+    squareRoot(firstNumber) {
+        return Math.sqrt(+firstNumber);
     },
 
-    percentage(whole) {
-        return whole / 100;
+    percentage(firstNumber) {
+        return +firstNumber / 100;
     },
 
-    roundZero(decimalNumber) {
-        return Math.round(decimalNumber);
+    roundZero(firstNumber) {
+        return Math.round(+firstNumber);
     },
         
-    roundTwo(decimalNumber) {
-        return parseFloat(decimalNumber.toFixed(2));
+    roundTwo(firstNumber) {
+        return parseFloat(+firstNumber.toFixed(2));
     },
 };
 
 const inputText = document.querySelector("#calculatorText");
-let firstNumber ="";
+let firstNumber ="0";
 const numberButtons = [...document.querySelectorAll(".numberButton")];
 numberButtons.forEach(button => {
     button.addEventListener("click", () => {
         const clickedButton = button.textContent;
-        firstNumber += clickedButton;
-        inputText.value = firstNumber;
+        handleInput(clickedButton);
     });
 });
 
+inputText.value = "0";
 
+// will be a function called getFirstNumber
+inputText.addEventListener("keydown", (event) => {
 
+    switch (true) {
+        case !(allowedInputArray.includes(event.key)):
+            event.preventDefault();
+            return;
 
+        case event.key === ".":
+            event.preventDefault();
+            handleDecimalInput();
+            break;
 
+        case event.key === "-":
+            event.preventDefault();
+            handleMinusInput();
+            break;
 
-// let operateInitiated = false;
-// const calculatorText = document.querySelector("#calculatorText");
-// const calculatorGrid = document.querySelectorAll("button");
+        case !(isNaN(event.key)):
+            event.preventDefault();
+            handleNumberInput(event.key);
+            break;
+        
+        case event.key === "Backspace":
+            event.preventDefault();
+            handleBackspaceInput();
+            break;
 
-// function handleFirstInput(input) {
-//     if (!operateInitiated) {
-//         operate(input);
-//         operateInitiated = true;
-//     }
-// }
+        default: 
+            getOperator(event.key);
+            break;
+        }
+    }
+);
 
-// calculatorGrid.forEach(button => {
-//     button.addEventListener("click", operate);
-// });
+function handleDecimalInput() {
+    if (!(firstNumber.includes("."))) {
+        if (firstNumber === "") {
+            firstNumber += "0."
+            inputText.value = firstNumber;
+        } else {
+            firstNumber += ".";
+            const [integerPart, decimalPart] = firstNumber.split(".");
+            const formattedInteger = Number(integerPart).toLocaleString();
+            inputText.value = `${formattedInteger}.${decimalPart}`;
+        }
+    } else return;
+}
 
-// calculatorText.addEventListener("keyup", event => {
-//     if (event.key === "Enter") {
-//         operate();
-//     }
-// });
+function handleMinusInput() {
+    if (firstNumber === "0" || firstNumber === "") {
+        firstNumber = "-";
+        inputText.value = firstNumber;
+    } else {
+        operate();
+    }
+}
 
-// function operate(firstNumber){
+function handleNumberInput(inputNumber) {
+    firstNumber += inputNumber;
 
-//     const inputText = document.querySelector("#calculatorText");
-//     inputText.value = firstNumber;
+    if ((firstNumber.includes("."))) {
+        const [integerPart, decimalPart] = firstNumber.split(".");
+        const formattedInteger = Number(integerPart).toLocaleString();
+        inputText.value = `${formattedInteger}.${decimalPart}`;
+    } else {
+        inputText.value = Number(firstNumber).toLocaleString();
+    }  
+}
 
-// }
+function handleBackspaceInput() {
+    if (firstNumber.length > 0) {
+        firstNumber = firstNumber.slice(0, -1);
+    }
 
+    if (firstNumber === "" || firstNumber === "-") {
+        inputText.value = "0";
+        firstNumber = "";
+    } else {
+        if (firstNumber.includes(".")) {
+            const [integerPart, decimalPart] = firstNumber.split(".");
+            const formattedInteger = Number(integerPart).toLocaleString();
+            inputText.value = `${formattedInteger}.${decimalPart}`;
+        } else {
+            inputText.value = Number(firstNumber).toLocaleString();
+        }
+    }
+}
 
+function clearAll() {
+    firstNumber ="0";
+    inputText.value ="0";
+}
 
+const clearAllButton = document.querySelector(".clearEntryOrAll");
+clearAllButton.addEventListener("click", clearAll);
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") clearAll();
+});
 
-
-
-
-
-
-
-
-
-
-
- 
-
- 
-
- 
+const allowedInputArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+    '.', '+', '-', '/', '*',
+    "Backspace", "Enter", "Escape", "ArrowLeft", "ArrowRight"
+];
 

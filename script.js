@@ -70,7 +70,7 @@ function getInput(input) {
             operate();
             break;
 
-        case input === '-' && operator === '' && firstNumber === '0':
+        case input === '-' && operator === '' && (firstNumber === '0' || firstNumber === ''):
             currentNumber = '-';
             inputText.value = currentNumber;
             break;

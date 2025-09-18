@@ -179,15 +179,17 @@ function operate() {
 
     firstNumber = String(operationResult);
     currentNumber = '';         
-    secondNumber = '';      
-
-    updateDisplay(firstNumber);
-
+    secondNumber = '';  
+    
     if (typeof operationResult === 'string') {
+        inputText.value = operationResult;
         operator = '';
         firstNumber = '';
         currentNumber = '';
-    }
+        
+    } else {
+        updateDisplay(firstNumber);
+    } 
 }
 
 function updateDisplay(value) {

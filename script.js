@@ -70,9 +70,9 @@ function getInput(input) {
             operate();
             break;
 
-        case input === '-' && operator === '':
+        case input === '-' && operator === '' && firstNumber === '0':
             currentNumber = '-';
-            updateDisplay(currentNumber);
+            inputText.value = currentNumber;
             break;
 
         case input === 'π':

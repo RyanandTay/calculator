@@ -1,37 +1,32 @@
-# JS Calculator Project
+# JavaScript Calculator
 
-A responsive web-based calculator built using **HTML**, **CSS**, and **JavaScript**.  
-
-This project demonstrates DOM manipulation, event handling, and basic arithmetic operations with a clean, intuitive UI.
-
----
-
-## Features
-
-- Basic arithmetic: **Addition, Subtraction, Multiplication, Division**
-- Advanced operations: **Exponent (x^y), Square Root (√X), Percentage (%)**
-- **Round** numbers to 0 or 2 decimal places (`R0`, `R2`)
-- **Toggle sign** (`+/-`) functionality
-- Supports **keyboard input** and mouse clicks
-- **Responsive layout** for different screen sizes
-- Real-time **formatted display** with commas for readability
-
----
-
-## Screenshot
-
-![Calculator Screenshot](images/calculator-screenshot.png)
-
----
+A fully functional calculator built with **HTML**, **CSS**, and **JavaScript**. Features include basic arithmetic operations, advanced functions, and a responsive design that works across desktop and mobile devices.
 
 ## Demo
 
-You can view the live demo [here](#) (replace `#` with your live project URL).
+![Calculator Screenshot](assets/screenshot.png)
 
----
+You can view the live demo [here](https://ryanandtay.github.io/calculator/).
+
+## Features
+
+- **Basic arithmetic:** addition, subtraction, multiplication, division
+- **Advanced functions:** square root, exponentiation, percentage, rounding (0 or 2 decimals)
+- **Sign toggle:** switch between positive and negative
+- **Pi constant support**
+- **Responsive design** for mobile and desktop
+- **iOS-friendly:** prevents zooming on repeated button taps
+
+## Technologies Used
+
+- **HTML5** for structure
+- **CSS3** for styling and layout
+- **JavaScript (ES6)** for interactivity
+- Google Fonts: [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono)
 
 ## Installation
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/js-calculator.git
+
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
